@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import url('ttps://fonts.googleapis.com/css2?family=Bangers&family=Bungee&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.font-bangers {
+  font-family: 'Bangers', cursive;
+}
+
+.font-bungee {
+  font-family: 'Bungee', cursive;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
