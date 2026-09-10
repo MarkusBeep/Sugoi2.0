@@ -36,17 +36,13 @@ export const Hero = () => {
     <section
       ref={heroRef}
       id="inicio"
-      className="relative w-full pt-32 pb-16 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-between border-b-4 border-black overflow-hidden bg-[#FFE600] min-h-screen"
-      style={{
-        backgroundImage: `radial-gradient(#000000 10%, transparent 11%)`,
-        backgroundSize: "12px 12px",
-      }}
+      className="relative w-full pt-32 pb-16 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-between border-b-4 border-black overflow-hidden bg-[#FFE600] min-h-screen bg-[radial-gradient(rgba(20,86,255,0.26)_1.2px,transparent_1.2px)] bg-size-[15px_15px]"
     >
       {/* El Conic gradient */}
       <div
         className="absolute inset-0 pointer-events-none opacity-10 z-0"
         style={{
-          background: `repeating-conic-gradient(from 0deg at ${centerOrigin}, #000 0deg 15deg, transparent 15deg 30deg)`,
+          background: `repeating-conic-gradient(from 0deg at ${centerOrigin}, #000 0deg 15deg, transparent 10deg 30deg)`,
         }}
       />
 
