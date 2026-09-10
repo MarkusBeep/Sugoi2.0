@@ -7,7 +7,7 @@ const ONOMATOPOEIAS = [
   "¡PLOP!",
   "¡ZAP!",
   "¡SUGOI!",
-  "¡KAPOW!",
+  "¡BACÁN!",
   "¡BANG!",
   "¡KABOOM!",
 ];
