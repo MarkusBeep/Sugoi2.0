@@ -29,7 +29,7 @@ export const Navbar = () => {
         {/* LOGO SUGOI.ST CON RAYO */}
         <a
           href="#"
-          className="flex items-center gap-1.5 text-2xl font-black font-bangers  tracking-wide text-black"
+          className="nav-logo flex items-center gap-1.5 text-2xl font-black font-bangers tracking-wide text-black"
         >
           <img src={Bolt} alt="favicon" className="w-6 h-6 " />
           <span className="font-bangers">SUGOI.ST</span>

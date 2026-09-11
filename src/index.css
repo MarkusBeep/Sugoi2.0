@@ -23,3 +23,193 @@
   width: max-content;
   animation: marquee 40s linear infinite;
 }
+
+/* ============================================================
+   PORTADO DEL PROYECTO ANTIGUO (Vortta/Sugoi — assets/css/styles.css)
+   Título del hero, botones y sello circular: mismos valores exactos.
+   ============================================================ */
+
+:root {
+  --blue: #1456ff;
+  --yellow: #ffe600;
+  --ink: #0a0a0a;
+  --cream: #f6f3e8;
+  --sh: 5px 5px 0 var(--ink);
+  --sh-lg: 8px 8px 0 var(--ink);
+  --font-display: "Bungee", system-ui, sans-serif;
+  --font-comic: "Bangers", "Bungee", system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ---------- Título ---------- */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.4vw, 78px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  /* Fija el salto DISEÑOS QUE / GOLPEAN COMO / UN RAYO.
+     En em, así escala junto con el clamp de font-size. */
+  max-width: 10em;
+  color: var(--ink);
+}
+
+.hero-title .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: wordIn 0.7s var(--ease) forwards;
+}
+.hero-title .word:nth-child(1) { animation-delay: 0.1s; }
+.hero-title .word:nth-child(2) { animation-delay: 0.2s; }
+.hero-title .word:nth-child(3) { animation-delay: 0.3s; }
+.hero-title .word:nth-child(4) { animation-delay: 0.4s; }
+.hero-title .word:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes wordIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title .hl {
+  background: var(--blue);
+  color: var(--cream);
+  padding: 0 14px 4px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: var(--sh);
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  margin: 0 2px;
+  font-style: normal;
+}
+
+/* ---------- Botones ---------- */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-family: var(--font-comic);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 3px solid var(--ink);
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: var(--sh);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  white-space: nowrap;
+}
+.btn:hover  { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.btn:active { transform: translate(3px, 3px);   box-shadow: 2px 2px 0 var(--ink); }
+
+.btn--primary { background: var(--blue);  color: var(--cream); }
+.btn--ghost   { background: var(--cream); color: var(--ink); }
+
+.bolt-icon { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+/* ---------- Sello circular ---------- */
+.hero-disc {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: var(--blue);
+  border: 5px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: var(--sh-lg);
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+.rotating-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 100% del padding-box del disco: así 100 unidades del viewBox
+     caen justo en el borde interno y el radio del path es medible. */
+  width: 100%;
+  height: 100%;
+  color: var(--yellow);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: discSpin 26s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes discSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-bolt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  fill: var(--yellow);
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .hero-disc { width: 140px; height: 140px; }
+  .hero-bolt { width: 70px; height: 70px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .word { animation-duration: 0.01ms; }
+  .hero-disc, .rotating-text { animation: none; }
+}
+
+/* Personajes: a partir de 1400px hay hueco para hacerlos mas grandes.
+   Va en CSS plano y no como variante arbitraria de Tailwind porque
+   `min-[1400px]:` se emite antes que sm/lg/xl y pierde por orden. */
+@media (min-width: 1400px) {
+  .hero-personajes { height: 30rem; }
+}
+
+/* El logo solo se aparta mientras el semaforo peatonal llega hasta el.
+   En la banda vertical del logo el arte del semaforo alcanza el 56.6% de su
+   ancho (~156px), y en pantallas anchas el centrado de max-w-7xl ya lo
+   desplaza solo, asi que el margen se va reduciendo hasta desaparecer.
+   Por debajo de 640px el semaforo cae en el flujo, muy por debajo del nav. */
+@media (min-width: 640px) {
+  .nav-logo {
+    margin-left: max(0px, calc(140px - max(0px, (100vw - 80rem) / 2)));
+  }
+}
+
+/* Funda y buzo van en el hueco a la derecha del poste, no encima de el.
+   Se anclan al borde derecho del poste (su left + su ancho) y el min()
+   los retrae cuando la pantalla no da, para que nunca se salgan.
+   --poste-x replica el left del poste en cada breakpoint. */
+/* El hueco entre el poste y la catedral solo existe en pantallas anchas:
+   el arte de la catedral arranca al 40% de su caja en las filas altas, asi
+   que el claro va desde el borde derecho del poste hasta ~100vw-80px.
+   Por debajo de 1700px ese claro no da para los dos y se ocultan. */
+.hero-funda,
+.hero-buzo { display: none; }
+
+@media (min-width: 1700px) {
+  .hero-funda,
+  .hero-buzo { display: block; }
+  .hero-funda { right: 18rem; }
+  .hero-buzo  { right: 3rem; }
+}

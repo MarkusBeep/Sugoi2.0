@@ -1,6 +1,13 @@
 import { useRef, useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
-import Bolt from "../assets/favicon.svg";
+import Cupula from "../assets/cupula-cuenca.webp";
+import Poste from "../assets/poste-senales.webp";
+import Semaforo from "../assets/semaforo-peatonal.webp";
+import Personajes from "../assets/personajes.webp";
+import Saltador from "../assets/saltador.webp";
+import Taza from "../assets/taza.webp";
+import Funda from "../assets/funda.webp";
+import Buzo from "../assets/buzo.webp";
+import Chica from "../assets/chica-movil.webp";
 
 export const Hero = () => {
   const circleRef = useRef<HTMLDivElement>(null);
@@ -36,7 +43,7 @@ export const Hero = () => {
     <section
       ref={heroRef}
       id="inicio"
-      className="relative w-full pt-32 pb-16 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-between border-b-4 border-black overflow-hidden bg-[#FFE600] min-h-screen bg-[radial-gradient(rgba(20,86,255,0.26)_1.2px,transparent_1.2px)] bg-size-[15px_15px]"
+      className="relative w-full pt-8 pb-68 sm:pb-76 lg:pt-4 lg:pb-16 px-6 sm:px-12 md:px-16 lg:px-24 flex flex-col justify-between border-b-4 border-black overflow-hidden bg-[#FFE600] min-h-screen bg-[radial-gradient(rgba(20,86,255,0.26)_1.2px,transparent_1.2px)] bg-size-[15px_15px]"
     >
       {/* El Conic gradient */}
       <div
@@ -46,52 +53,152 @@ export const Hero = () => {
         }}
       />
 
+      {/* CÚPULA: sangra contra la esquina inferior derecha */}
+      <img
+        src={Cupula}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 right-0 z-0 w-72 translate-x-[50%] select-none sm:w-80 xl:w-[42rem] 2xl:w-[50rem]"
+      />
+
+      {/* PERSONAJES: gente con el merch, apoyados en el borde inferior */}
+      <img
+        src={Personajes}
+        alt=""
+        aria-hidden="true"
+        className="hero-personajes pointer-events-none absolute bottom-0 left-[40rem] z-[2] h-56 w-auto -translate-x-1/2 select-none sm:h-64 lg:left-[48.75rem] lg:h-[min(24rem,calc(100vw-49rem))] lg:translate-x-0"
+      />
+
+      {/* SALTADOR y TAZA: banda libre junto al semáforo, sobre el título */}
+      <img
+        src={Saltador}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[22rem] top-20 z-[2] hidden h-[23rem] w-auto select-none lg:block"
+      />
+      <img
+        src={Taza}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[48rem] top-40 z-[2] hidden h-54 w-auto rotate-25 select-none lg:block"
+      />
+
+      {/* FUNDA y BUZO: entre el poste y la catedral */}
+      <img
+        src={Funda}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none hero-funda absolute left-[108rem] top-[21rem] z-[3] h-84 w-auto rotate-35 select-none"
+      />
+      <img
+        src={Buzo}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none hero-buzo absolute left-[90rem] top-[5rem] z-[3] h-90 w-auto rotate-350 select-none"
+      />
+
+      {/* CHICA CON MÓVIL */}
+      <img
+        src={Chica}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-[90rem] z-[2] hidden h-[26rem] w-auto select-none lg:block"
+      />
+
+      {/* POSTE DE SEÑALES: zona central */}
+      <img
+        src={Poste}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-[60%] z-[1] h-[28vh] w-auto -translate-x-1/2 select-none sm:h-[32vh] lg:left-[51rem] lg:h-[80vh] lg:translate-x-0 xl:left-[min(62rem,calc(100vw-22rem))] xl:h-[88vh]"
+      />
+
+      {/* SELLO CIRCULAR: esquina superior derecha */}
+      <div className="z-10 mb-6 ml-auto w-fit sm:absolute sm:top-28 sm:right-12 sm:mb-0 md:right-16 lg:right-24">
+        <div ref={circleRef} className="hero-disc">
+          {/* TEXTO ROTATIVO */}
+          <svg
+            viewBox="0 0 200 200"
+            className="rotating-text"
+            aria-hidden="true"
+          >
+            <defs>
+              <path
+                id="circlePath"
+                d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+              />
+            </defs>
+            <text
+              fontFamily="Bungee"
+              fontSize="12.9"
+              fill="currentColor"
+              letterSpacing="0.9"
+            >
+              <textPath href="#circlePath">
+                SUGOI · ESTUCHES · HOODIES · CAMISETAS · MADE IN CUENCA ·{" "}
+              </textPath>
+            </text>
+          </svg>
+
+          {/* RAYO CENTRAL */}
+          <svg viewBox="-1 0 24 24" className="hero-bolt" aria-hidden="true">
+            <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" />
+          </svg>
+        </div>
+      </div>
+
       {/* CONTENEDOR PRINCIPAL DE CONTENIDO */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row justify-between items-center gap-12 my-auto">
+      <div className="relative z-10 w-full flex flex-col my-auto">
         {/* Columna Izq*/}
         <div className="flex-1 w-full flex flex-col items-start text-left z-10">
+          {/* SEMÁFORO PEATONAL: encabeza la columna; el margen negativo
+              cancela el padding de la sección para que toque el borde. */}
+          <img
+            src={Semaforo}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none -ml-4 mb-14 h-44 w-auto select-none sm:-ml-12 sm:h-52 md:-ml-16 lg:-ml-24 lg:h-64"
+          />
+
           {/* New Drop */}
-          <div className="inline-flex items-center gap-2 bg-white text-black font-space font-bold text-xs sm:text-sm uppercase px-4 py-1.5 rounded-full border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-6">
+          <div className="inline-flex items-center gap-2 bg-white text-black font-space font-bold text-xs sm:text-sm uppercase px-4 py-1.5 rounded-full border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-4">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
             <span>NEW DROP • 2026</span>
           </div>
 
           {/* TÍTULO PRINCIPAL */}
-          <h1 className="font-bungee text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-tight text-black uppercase leading-[1.1] mb-6 ">
-            DISEÑOS QUE
-            <span className="inline-block bg-[#1456FF] text-white px-4 py-1 rounded-3xl border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -rotate-1 ml-5 ">
-              GOLPEAN
+          <h1 className="hero-title">
+            <span className="word">DISEÑOS</span>{" "}
+            <span className="word">QUE</span>{" "}
+            <span className="word">
+              <span className="hl">GOLPEAN</span>
             </span>{" "}
-            <br />
-            COMO UN RAYO.
+            <span className="word">COMO</span>{" "}
+            <span className="word">UN RAYO.</span>
           </h1>
 
           {/* SUBTÍTULO */}
-          <p className="font-space font-bold text-base sm:text-lg md:text-xl text-black/90 max-w-2xl mb-8">
+          <p className="font-space font-bold text-base sm:text-lg md:text-xl text-black/90 max-w-2xl mb-5">
             Camisetas, hoodies y estuches personalizados. Hechos a mano en
             Cuenca, para gente bacana.
           </p>
 
           {/* BOTONES */}
-          <div className="flex flex-wrap items-center gap-4 mb-12">
-            <a
-              href="#disena"
-              className="font-bungee bg-[#1456FF] text-white text-sm sm:text-base uppercase px-8 py-4 rounded-xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x- hover:translate-y- hover:shadow-none transition-all flex items-center gap-2"
-            >
-              <span>Diseña Tu Prenda</span>
-              <ArrowRight className="w-5 h-5 stroke-3]" />
+          <div className="hero-cta">
+            <a href="#disena" className="btn btn--primary">
+              Diseña tu prenda
+              <svg viewBox="0 0 24 24" className="bolt-icon" aria-hidden="true">
+                <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" />
+              </svg>
             </a>
 
-            <a
-              href="#catalogo"
-              className="font-bungee bg-white text-black text-sm sm:text-base uppercase px-8 py-4 rounded-xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x- hover:translate-y- hover:shadow-none transition-all"
-            >
-              Ver Catálogo
+            <a href="#catalogo" className="btn btn--ghost">
+              Ver catálogo
             </a>
           </div>
 
           {/* VENTAJAS / BARRA INFERIOR */}
-          <div className="grid grid-cols-3 gap-8 pt-6 border-t-2 border-black/20 w-full max-w-2xl text-black">
+          <div className="grid grid-cols-3 gap-8 pt-4 border-t-2 border-black/20 w-full max-w-2xl text-black">
             <div>
               <p className="font-bungee text-sm uppercase">5-7 DÍAS</p>
               <p className="font-space text-xs font-bold text-black/70">
@@ -109,40 +216,6 @@ export const Hero = () => {
               <p className="font-space text-xs font-bold text-black/70">
                 En toda Cuenca
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* COLUMNA DERECHA: SELLO CIRCULAR */}
-        <div className="shrink-0 flex justify-center items-center lg:pr-12 relative z-10">
-          <div
-            ref={circleRef}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 xl:w-100 xl:h-100 rounded-full bg-[#1456FF] border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center"
-          >
-            {/* TEXTO ROTATIVO */}
-            <svg
-              className="absolute w-full h-full animate-[spin_12s_linear_infinite]"
-              viewBox="0 0 100 100"
-            >
-              <path
-                id="textPath"
-                d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                fill="none"
-              />
-              <text className="font-bungee text-[6px] fill-[#FFE600] tracking-widest uppercase">
-                <textPath href="#textPath">
-                  • MADE IN CUENCA • SUGOI • ESTUCHES • HOODIES • CAMISETAS
-                </textPath>
-              </text>
-            </svg>
-
-            {/* RAYO CENTRAL */}
-            <div className="bg-transparent p-6 z-10">
-              <img
-                src={Bolt}
-                alt="Rayo Sugoi"
-                className="w-32 h-32 md:w-40 md:h-40"
-              />
             </div>
           </div>
         </div>
