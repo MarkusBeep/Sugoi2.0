@@ -70,11 +70,13 @@ export const Hero = () => {
       />
 
       {/* SALTADOR y TAZA: banda libre junto al semáforo, sobre el título */}
+      {/* SALTADOR: OCULTO temporalmente. Para volver a mostrarlo,
+          anade `lg:block` al final del className. */}
       <img
         src={Saltador}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[22rem] top-20 z-[2] hidden h-[23rem] w-auto select-none lg:block"
+        className="pointer-events-none absolute left-[22rem] top-20 z-[2] hidden h-[23rem] w-auto select-none"
       />
       <img
         src={Taza}
@@ -98,11 +100,13 @@ export const Hero = () => {
       />
 
       {/* CHICA CON MÓVIL */}
+      {/* CHICA CON MÓVIL: OCULTO temporalmente. Para volver a mostrarlo,
+          anade `lg:block` al final del className. */}
       <img
         src={Chica}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-[90rem] z-[2] hidden h-[26rem] w-auto select-none lg:block"
+        className="pointer-events-none absolute bottom-0 left-[90rem] z-[2] hidden h-[26rem] w-auto select-none"
       />
 
       {/* POSTE DE SEÑALES: zona central */}
