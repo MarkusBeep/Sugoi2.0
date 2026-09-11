@@ -175,7 +175,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-title .word { animation-duration: 0.01ms; }
-  .hero-disc, .rotating-text { animation: none; }
+  .hero-disc, .rotating-text, .hero-flota { animation: none; }
+  .hero-flota { transition: none; }
 }
 
 /* Personajes: a partir de 1400px hay hueco para hacerlos mas grandes.
@@ -213,3 +214,23 @@
   .hero-funda { right: 18rem; }
   .hero-buzo  { right: 3rem; }
 }
+
+/* ---------- Flotacion + hover de los elementos "producto" ----------
+   Reusa el mismo floatY del sello circular. Funciona junto a las clases
+   rotate-* de Tailwind v4 porque en v4 `rotate` y `scale` son propiedades
+   independientes de `transform`, que es la que anima floatY: las tres se
+   componen sin pisarse. */
+.hero-flota {
+  animation: floatY 6s ease-in-out infinite;
+  transition: scale 0.3s var(--ease);
+}
+
+.hero-flota:hover {
+  scale: 1.12;
+}
+
+/* Desfases para que no floten todos al unisono. El delay negativo los
+   arranca ya empezados, sin espera inicial. */
+.hero-flota-1 { animation-delay: -1.5s; }
+.hero-flota-2 { animation-delay: -3s; }
+.hero-flota-3 { animation-delay: -4.5s; }

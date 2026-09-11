@@ -82,7 +82,7 @@ export const Hero = () => {
         src={Taza}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[48rem] top-40 z-[2] hidden h-54 w-auto rotate-25 select-none lg:block"
+        className="hero-flota hero-flota-1 absolute left-[48rem] top-40 z-[2] hidden h-54 w-auto rotate-25 select-none lg:block"
       />
 
       {/* FUNDA y BUZO: entre el poste y la catedral */}
@@ -90,13 +90,13 @@ export const Hero = () => {
         src={Funda}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none hero-funda absolute left-[108rem] top-[21rem] z-[3] h-84 w-auto rotate-35 select-none"
+        className="hero-flota hero-flota-2 hero-funda absolute left-[108rem] top-[21rem] z-[3] h-84 w-auto rotate-35 select-none"
       />
       <img
         src={Buzo}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none hero-buzo absolute left-[90rem] top-[5rem] z-[3] h-90 w-auto rotate-350 select-none"
+        className="hero-flota hero-flota-3 hero-buzo absolute left-[90rem] top-[5rem] z-[3] h-90 w-auto rotate-350 select-none"
       />
 
       {/* CHICA CON MÓVIL */}
@@ -161,7 +161,7 @@ export const Hero = () => {
             src={Semaforo}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none -ml-4 mb-14 h-44 w-auto select-none sm:-ml-12 sm:h-52 md:-ml-16 lg:-ml-24 lg:h-64"
+            className="hero-flota -ml-4 mb-14 h-44 w-auto select-none sm:-ml-12 sm:h-52 md:-ml-16 lg:-ml-24 lg:h-64"
           />
 
           {/* New Drop */}
