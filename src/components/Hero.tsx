@@ -57,12 +57,13 @@ export const Hero = () => {
           </div>
 
           {/* TÍTULO PRINCIPAL */}
-          <h1 className="font-bungee text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-tight text-black uppercase leading-[1.1] mb-6 mr-0.5">
+          <h1 className="font-bungee text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-tight text-black uppercase leading-[1.1] mb-6 ">
             DISEÑOS QUE
-            <span className="inline-block bg-[#1456FF] text-white px-4 py-1 rounded-3xl border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -rotate-1">
-              GOLPEAN <br />
+            <span className="inline-block bg-[#1456FF] text-white px-4 py-1 rounded-3xl border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -rotate-1 ml-5 ">
+              GOLPEAN
             </span>{" "}
-            COMO UN RAYO. <br />
+            <br />
+            COMO UN RAYO.
           </h1>
 
           {/* SUBTÍTULO */}
