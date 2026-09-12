@@ -152,9 +152,9 @@ export const Hero = () => {
       </div>
 
       {/* CONTENEDOR PRINCIPAL DE CONTENIDO */}
-      <div className="relative z-10 w-full flex flex-col my-auto">
+      <div className="hero-contenido relative z-10 w-full flex flex-col my-auto">
         {/* Columna Izq*/}
-        <div className="flex-1 w-full flex flex-col items-start text-left z-10">
+        <div className="hero-columna flex-1 w-full flex flex-col items-start text-left z-10">
           {/* SEMÁFORO PEATONAL: encabeza la columna; el margen negativo
               cancela el padding de la sección para que toque el borde. */}
           <img

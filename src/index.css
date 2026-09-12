@@ -234,3 +234,18 @@
 .hero-flota-1 { animation-delay: -1.5s; }
 .hero-flota-2 { animation-delay: -3s; }
 .hero-flota-3 { animation-delay: -4.5s; }
+
+/* ---------- Puntero en la columna de contenido ----------
+   La columna es w-full y va en z-10, asi que su caja tapaba el hover de
+   las decorativas situadas a su derecha aunque ahi no se vea nada.
+   Se vuelve transparente al puntero y se reactiva solo en sus hijos,
+   cuyas cajas si estan acotadas (el titulo por max-width, el subtitulo
+   y las ventajas por max-w-2xl), de modo que el texto sigue
+   seleccionable y los botones clicables.
+   .hero-cta queda fuera porque es un flex de ancho completo: en su caso
+   se reactivan los enlaces, no el contenedor. */
+.hero-contenido,
+.hero-columna { pointer-events: none; }
+
+.hero-columna > *:not(.hero-cta) { pointer-events: auto; }
+.hero-cta a { pointer-events: auto; }
