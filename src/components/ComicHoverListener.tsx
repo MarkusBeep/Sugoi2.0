@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ONOMATOPOEIAS = [
-  "¡BOOM!",
-  "¡POW!",
-  "¡PLOP!",
-  "¡ZAP!",
+  "¡DE LEY!",
+  "¡BUENAZO!",
+  "¡SIMÓN!",
+  "¡DE UNA!",
   "¡SUGOI!",
   "¡BACÁN!",
-  "¡BANG!",
-  "¡KABOOM!",
+  "¡CHÉVERE!",
+  "¡PEPA!",
 ];
 
 // Paleta Pop-Art
